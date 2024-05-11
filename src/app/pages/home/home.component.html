@@ -1,0 +1,42 @@
+<div class="title">
+    <h1 class="text-3xl font-bold">MAQE Forum</h1>
+</div>
+<div class="sub-title">
+    <p class="mt-8">Your current timezone is: {{currentDate | date:'short'}}</p>
+</div>
+@for(author of authors; track author.id){
+@for(post of posts; track post.id){
+<div class="card-wrap mt-4 mb-4 w-[1000px] py-4 shadow-lg rounded-2xl" [ngClass]="{'bg-white':post.id %2 !== 0,'bg-blue':post.id %2 === 0}">
+    <div class="wrap-item flex items-center px-4">
+        <div class="image-user">
+            <img src={{author.avatar_url}} class="rounded-full w-8" alt="userAvartar{{author.id}}">
+        </div>
+        <div class="name-user ml-2">
+            <p class="text-orange-600 font-bold">{{author.name}}</p>
+        </div>
+        <div class="post-date-user ml-2">
+            <p>posted on {{post.created_at}} </p>
+        </div>
+    </div>
+    <div class="line mt-2 w-full">
+        <hr class="text-red-600">
+    </div>
+    <div class="wrap-body grid grid-cols-2">
+        <div class="body-image grid grid-cols-1">
+            <div class="image-body mt-4 mx-4">
+                <img src={{post.image_url}} alt="image-body" class="w-full">
+            </div>
+        </div>
+        <div class="grid grid-cols-1 pr-2">
+            <div class="body-desc mt-4">
+                <p class="font-bold">{{post.title}}</p>
+                <p class="pt-4">{{post.body}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+}
+}
+@empty {
+<p>This Page Can't Loaded !</p>
+}

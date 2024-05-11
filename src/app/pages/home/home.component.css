@@ -1,0 +1,25 @@
+.bg-white{
+    background-color: white;
+}
+.bg-blue{
+    background-color: rgb(191, 224, 255);
+}
+
+@media screen and (max-width:768px) {
+    .card-wrap {
+        width: 100%;
+    }
+
+    .wrap-body {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .body-desc {
+        text-align: center;
+    }
+
+    .card-wrap {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
