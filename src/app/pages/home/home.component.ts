@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../../services/user-service.service';
 import { authors, posts } from '../../model/model';
 import { DatePipe } from '@angular/common';
-import { CommonModule } from '@angular/common';
+import { CardComponent } from '../../components/card/card.component';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DatePipe,CommonModule],
+  imports: [DatePipe,CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
